@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝘼𝙉𝙐𝙎𝙃𝙆𝘼 𝙎𝙃𝘼𝙍𝙈𝘼 🧿⃤</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #0088cc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px;
+            border: 3px solid white;
+        }
+        
+        .logo i {
+            font-size: 50px;
+        }
+        
+        .logo-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #0088cc;
+        }
+        
+        .description {
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .timer {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #ffcc00;
+            font-weight: bold;
+        }
+        
+        .join-btn {
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .join-btn:hover {
+            background-color: #006699;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .join-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .join-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .join-btn:hover::after {
+            left: 100%;
+        }
+        
+        .channel-name {
+            margin-top: 20px;
+            font-size: 18px;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .logo i {
+                font-size: 40px;
+            }
+            
+            .logo-name {
+                font-size: 20px;
+            }
+            
+            .join-btn {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="content">
+        <div class="logo">
+            <img src="logo.jpg" alt="Cricket Icon" style="width: 70px; height: 70px; border-radius: 50%;">
+        </div>
+        <div class="logo-name">𝘼𝙉𝙐𝙎𝙃𝙆𝘼 𝙎𝙃𝘼𝙍𝙈𝘼 🧿⃤</div>
+        
+        <h1>Become a part of our</h1>
+        <h2>Community</h2>
+        
+        <p class="description">Disclaimer :- Channel is for entertainment purpose Not for any illegal activities.</p>
+        
+        <div class="timer" id="timer">01:00</div>
+        
+        <button class="join-btn" id="joinBtn" style="opacity:0; transition: opacity 1s;">Join [𝘼𝙉𝙐𝙎𝙃𝙆𝘼 𝙎𝙃𝘼𝙍𝙈𝘼 🧿⃤] Channel</button>
+        <script>
+            // Fade in effect
+            window.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('joinBtn').style.opacity = '1';
+            });
+
+            // Fade out on click
+            document.getElementById('joinBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            this.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = "https://t.me/+O-Pg9zO7G5s3YWE1";
+            }, 1000);
+            });
+        </script>
+        
+        <!-- <div class="channel-name">@cricket_updates_official</div> -->
+    </div>
+
+    <script>
+        // 60-second timer
+        let timeLeft = 60;
+        const timer = document.getElementById('timer');
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timer.textContent = "00:00";
+            }
+        }, 1000);
+        
+        // Button click event
+        document.getElementById('joinBtn').addEventListener('click', function() {
+            // Replace with your actual Telegram link
+            window.location.href = "https://t.me/+O-Pg9zO7G5s3YWE1";
+        });
+    </script>
+</body>
+</html>
